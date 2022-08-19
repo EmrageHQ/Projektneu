@@ -1,0 +1,12 @@
+name: Zombieborder
+version: '${project.version}'
+main: de.ghggames.ghg.zombieborder.Zombieborder
+api-version: 1.19
+#loadbefore: [ Bananensaft ]
+#depend: [ MultiverseCore ]
+#softdepend: [ Bananensaft ]
+authors: [ GamerGHG,Elektroblock ]
+commands:
+  zombiestart:
+  zombieend:
+  zombiehitch:
