@@ -1,6 +1,7 @@
 package de.ghggames.ghg.zombieborder.system;
 
 
+import de.ghggames.ghg.zombieborder.Zombieborder;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.StructureType;
@@ -39,8 +40,10 @@ public class BorderManager {
             }
         }
         player.sendMessage("§2Es kann los gehen!");
+        Zombieborder.setTimer(0);
         Bukkit.getWorld("world").getWorldBorder().setCenter(getStrongholdLocation(null));
         Bukkit.getWorld("world").getWorldBorder().setSize(1);
+        Zombieborder.state=0;
     }
 
     private static Location sLocation;
@@ -67,5 +70,9 @@ public class BorderManager {
         sLocation = new Location(temploc.getWorld(), temploc.getX() + 0.5, temploc.getWorld().getHighestBlockYAt(temploc), temploc.getZ() + 0.5);
         return sLocation;
 
+    }
+
+    public static void addBorder(int count) {
+        Bukkit.getWorld("world").getWorldBorder().setSize(Bukkit.getWorld("world").getWorldBorder().getSize()+count);
     }
 }
