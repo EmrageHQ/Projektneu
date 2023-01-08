@@ -61,6 +61,9 @@ public final class Zombieborder extends JavaPlugin {
         BukkitScheduler scheduler = this.getServer().getScheduler();
         scheduler.scheduleAsyncRepeatingTask(this, new Runnable() {
             public void run() {
+                for (Player p : Bukkit.getOnlinePlayers()) {
+                    p.sendTitle("", "Plugin von Elektroblock", 0,10,10);
+                }
                 if (BorderManager.isInGame()) {
                     Iterator var1 = Bukkit.getOnlinePlayers().iterator();
 
